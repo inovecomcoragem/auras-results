@@ -39,6 +39,24 @@ var dataFilters = {
     'Realizadora de Possibilidades',
     'Mestra de Robôs',
     'Líder das Máquinas'
+  ],
+  "company": [
+    "sebrae",
+    "senat",
+    "thoughtworks",
+    "hsm",
+    "caixa",
+    "petrobras",
+    "atto adriana sementes",
+    "Mirach",
+    "Anima educacao",
+    "grupo mgb",
+    "cbic",
+    "boticário",
+    "Up brasil",
+    "SingularityU",
+    "Itau",
+    "Interativa"
   ]
 };
 
@@ -139,7 +157,7 @@ function initializeGraph(){
     "#d5d5d0",
     "#9c8069",
     "#bf5e81",
-    "#f7366b"
+    "#7FFF00"
   ]);
 
   myGraph = new CanvasJS.Chart("chart-container", {
@@ -352,7 +370,7 @@ function processFilter(data, filterOptions) {
       filteredData.push(person);
     }
   }
-  
+
   document.getElementById('record-counter').innerHTML = "Número de respostas: "+filteredData.length;
   return filteredData;
 }
