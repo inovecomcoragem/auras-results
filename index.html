@@ -12,15 +12,19 @@
         font-size: 20px;
         margin: 10px 0;
       }
+      .hide {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <div id="filter-form-container"></div>
-    <div id="record-counter"></div>
+    <div id="filter-form-container" class="hide"></div>
+    <div id="record-counter" class="hide"></div>
     <div id="chart-container" style="height: 70vh; width: 100%;"></div>
     <div id="question-container"></div>
     <form>
-      <input id="relative-comparison" type="checkbox" onchange="drawGraph()">Comparação Relativa
+      <input id="relative-comparison" type="checkbox" onchange="drawGraph()">
+      Comparação Relativa
     </form>
   </body>
 </html>
