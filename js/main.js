@@ -48,15 +48,7 @@ var dataFilters = {
     "caixa",
     "petrobras",
     "atto adriana sementes",
-    "Mirach",
-    "Anima educacao",
-    "grupo mgb",
-    "cbic",
-    "boticário",
-    "Up brasil",
-    "SingularityU",
-    "Itau",
-    "Interativa"
+    "Anima educacao"
   ]
 };
 
@@ -270,11 +262,13 @@ function countAnswers(selectedQuestions, answers) {
         }
       }
 
-      if(Number.isInteger(thisDataSet[thisAnswer])) {
-        thisDataSet[thisAnswer] += 1;
-      }
+      if(thisDataSet) {
+        if(Number.isInteger(thisDataSet[thisAnswer])) {
+          thisDataSet[thisAnswer] += 1;
+        }
 
-      thisDataSet = thisDataSet[thisAnswer];
+        thisDataSet = thisDataSet[thisAnswer];
+      }
     });
   }
 
