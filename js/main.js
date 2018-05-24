@@ -370,6 +370,7 @@ function drawGraph() {
   myGraph.title.set('text', chartTitle.substr(3), false);
 
   if(selectedQuestions.length > 1) {
+    myGraph.set('axisX', {interval: 1, labelFontSize: 16});
     myGraph.set('data', []);
     for(var i in dataSets) {
       myGraph.addTo('data', JSON.parse(JSON.stringify(columnGraphData)));
