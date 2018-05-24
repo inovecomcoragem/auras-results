@@ -119,7 +119,7 @@ var columnGraphData = {
   type: "stackedColumn",
   showInLegend: true,
   legendText: "{legendText}",
-  toolTipContent:"{legendText}: {y}"
+  toolTipContent:"{label} / {legendText}: {y}"
 };
 
 function initializeGraph(){
@@ -221,18 +221,23 @@ function countAnswers(selectedQuestions, answers) {
 
   for(var p in answers) {
     var thisDataSet = dataCounter;
+    var person = answers[p];
 
-    for(var q = (selectedQuestions.length - 1); q >= 0; q--) {
-      var thisQuestion = selectedQuestions[q];
-      var thisAnswer = answers[p][thisQuestion] ||
-          answers[p]['answers'][thisQuestion];
+    selectedQuestions.slice().reverse().forEach(function(thisQuestion) {
+      var thisAnswer = person[thisQuestion];
 
-      if(q == 0) {
+      for(var a in person['answers']) {
+        if(person['answers'][a]['question'] === thisQuestion) {
+          thisAnswer = person['answers'][a]['option'];
+        }
+      }
+
+      if(Number.isInteger(thisDataSet[thisAnswer])) {
         thisDataSet[thisAnswer] += 1;
       }
 
       thisDataSet = thisDataSet[thisAnswer];
-    }
+    });
   }
 
   return dataCounter;
@@ -250,11 +255,6 @@ function create2dDataSets(dataCounter) {
       for(var xAxis in dataCounter[yAxis]) {
         thisDataSet.push({ y: dataCounter[yAxis][xAxis], legendText: yAxis, label: xAxis });
       }
-      /*
-      thisDataSet.sort(function(a, b) {
-        return (a.label > b.label) ? 1 : -1;
-      });
-      */
       data.push(thisDataSet);
     } else {
       data[0] = data[0] || [];
@@ -365,7 +365,7 @@ function drawGraph() {
   }
 
   for(var i in selectedQuestions) {
-    chartTitle += " ✖ "+selectedQuestions[i];
+    chartTitle += " ✕ "+selectedQuestions[i];
   }
   myGraph.title.set('text', chartTitle.substr(3), false);
 
