@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analisador de Dados</title>
+    <meta charset="utf-8">
+    <script src="js/canvasjs.min.js"></script>
+    <script src="js/loadJson.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+      #record-counter {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="filter-form-container"></div>
+    <div id="record-counter"></div>
+    <div id="chart-container" style="height: 70vh; width: 100%;"></div>
+    <div id="question-container"></div>
+    <form>
+      <input id="relative-comparison" type="checkbox" onchange="drawGraph()">Comparação Relativa
+    </form>
+  </body>
+</html>
