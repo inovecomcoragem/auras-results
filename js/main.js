@@ -123,6 +123,25 @@ var columnGraphData = {
 };
 
 function initializeGraph(){
+  CanvasJS.addColorSet("customColorSet", [
+    "#4f81bc",
+    "#c0504d",
+    "#9abb58",
+    "#24bfaa",
+    "#7f63a1",
+    "#3abeff",
+    "#f79546",
+    "#000000",
+    "#006a32",
+    "#ffd700",
+    "#ea4492",
+    "#ff9cda",
+    "#d5d5d0",
+    "#9c8069",
+    "#bf5e81",
+    "#f7366b"
+  ]);
+
   myGraph = new CanvasJS.Chart("chart-container", {
     title: {
       text: "",
@@ -137,7 +156,8 @@ function initializeGraph(){
       fontFamily: "Helvetica"
     },
     theme: "theme2",
-    data: [pieGraphData]
+    data: [pieGraphData],
+    colorSet:  "customColorSet"
   });
   myGraph.render();
 }
