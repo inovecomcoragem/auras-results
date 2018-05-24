@@ -43,7 +43,6 @@ var dataFilters = {
   "company": [
     "sebrae",
     "senat",
-    "thoughtworks",
     "hsm",
     "caixa",
     "petrobras",
