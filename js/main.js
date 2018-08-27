@@ -52,14 +52,14 @@ var dataFilters = {
 };
 
 var questionFilters = {
-  'Com qual dessas tendências você mais se identifica?': [
+  'Com qual dessas macrotendências tecnológicas você mais se identifica?': [
     'Interações em evolução',
     'Crescimento das Plataformas',
     'Segurança, privacidade e transparência',
     'Físico. Agora digital.',
     'Humanidade aumentada'
   ],
-  'Qual dessas tecnologias produzirá o maior impacto sobre os negócios?': [
+  'Qual dessas tecnologias produzirá o maior impacto no ecosistema de TI?': [
     'Assistentes de Voz',
     'SAAS',
     'Blockchain',
@@ -172,7 +172,7 @@ function initializeGraph(){
 }
 
 window.onload = function() {
-  loadJSON("data/people.json", function(json) {
+  loadJSON("data/20180827.json", function(json) {
     answers = JSON.parse(json);
     createFilterForms(dataFilters);
     filteredAnswers = processFilter(answers, getActiveFilterOptions());
