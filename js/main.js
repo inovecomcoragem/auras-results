@@ -3,15 +3,6 @@ var filteredAnswers;
 var myGraph;
 
 var dataFilters = {
-  "role": [
-    "Executiva C-Level",
-    "Direção ou VP",
-    "Gerente de Projeto",
-    "Gerente de Produto",
-    "Gerente/Outro",
-    "Consultora/Consultor",
-    "Outro"
-  ],
   "function": [
     "Desenvolvedora",
     "Arquiteta de Software",
@@ -39,15 +30,6 @@ var dataFilters = {
     'Realizadora de Possibilidades',
     'Mestra de Robôs',
     'Líder das Máquinas'
-  ],
-  "company": [
-    "sebrae",
-    "senat",
-    "hsm",
-    "caixa",
-    "petrobras",
-    "atto adriana sementes",
-    "Anima educacao"
   ]
 };
 
